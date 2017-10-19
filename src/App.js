@@ -2,31 +2,37 @@ import React, { Component } from 'react'
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
-  Image,
-  List,
   Menu,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.css'
 
-import greyBackground from './img/GreyBackground2.svg'
+import './App.css'
+
+import TileShooter from './components/tile_shooter/tileshooter.js'
+import Tundra from './components/tundra/tundra.js'
+import OdysseyMk3 from './components/odysseymk3/odysseymk3.js'
+import RocketLaunch from './components/rocketlaunch/rocketlaunch.js'
+import HoudiniSmoke from './components/houdini_smoke/houdinismoke.js'
 
 const FixedMenu = () => (
   <Menu fixed='top' size='large'>
     <Container>
 
-      <Menu.Item as='a' header size='large'>
+      <Menu.Item as='a' header size='large' style={{ fontSize: '1.2em' }} >
         Adrian's Portfolio
       </Menu.Item>
 
-      <Menu.Item as='a' active>The Archive</Menu.Item>
-      <Menu.Item as='a'>About Me</Menu.Item>
-      <Menu.Item as='a'>Contact Me</Menu.Item>
+      <Menu.Item as='a' href='https://github.com/AdrianOrenstein/latex_resume/blob/master/resume.pdf'>My Resume</Menu.Item>
+      
+      <Menu.Item as='a' href="mailto:adrian.orenstein@gmail.com?Subject=Hello">
+        <Icon name='mail' size='large'/>
+        adrian.orenstein@gmail.com
+      </Menu.Item>
 
       <Menu.Item position='right'>
         
@@ -59,162 +65,96 @@ export default class HomepageLayout extends Component {
       <div>
         { visible ? <FixedMenu /> : null }
 
-        <Visibility
-          onBottomPassed={this.showFixedMenu}
-          onBottomVisible={this.hideFixedMenu}
-          once={false}
-        >
+        <div className='app-background'>
+        <Container>
+          <Visibility
+            onBottomPassed={this.showFixedMenu}
+            onBottomVisible={this.hideFixedMenu}
+            once={false}
+          >
           <Segment
             inverted
             textAlign='center'
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
+            className='transparent-block'
           >
-            <Container>
-              <Menu inverted pointing secondary size='large'>
-                <Menu.Item as='a' header style={{ marginRight: '3em' }}>
-                  Adrian's Portfolio
-                </Menu.Item>
-                <Menu.Item as='a' active>Home</Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
+            {/* Task Bar */}
+            <Menu inverted pointing secondary size='medium'>
 
-                <Menu.Item position='right' size='mini'>
-                  <Button color='linkedin' size='mini'>
-                    <Icon name='linkedin' /> 
-                    LinkedIn 
-                  </Button>
-
-                  <Button color='github' size='mini' style={{ marginLeft: '0.5em' }}>
-                    <Icon name='github' /> 
-                    Github
-                  </Button>
-                </Menu.Item>
-
-              </Menu>
-            </Container>
-
-            <Container text>
+              <Menu.Item as='a' active header style={{ fontSize: '1.2em' }}>
+                Adrian's Portfolio
+              </Menu.Item>
               
-              <Header
-                as='h1'
-                content='Welcome to my portfolio!'
-                inverted
-                style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
-              />
-              
+              <Menu.Item as='a' style={{ marginBottom: '2px', marginLeft: '1em' }} href='https://github.com/AdrianOrenstein/latex_resume/blob/master/resume.pdf'>My Resume</Menu.Item>
+              <Menu.Item as='a' href="mailto:adrian.orenstein@gmail.com?Subject=Hello">
+                <Icon name='mail' size='large'/> adrian.orenstein@gmail.com
+              </Menu.Item>
+
+            </Menu>
+
+            {/* Hero */}
+
+            <Header
+              as='h1'
+              content='Welcome to my portfolio!'
+              inverted
+              style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
+            />
+
+            <Container text style={{ padding: '1em 0em' }}>
               <Header
                 as='h2'
                 content="This website will be used to host my most recent works, as well as provide an overview of what I'm currently working on."
                 inverted
-                style={{ fontSize: '1.25em', fontWeight: 'normal' }}
+                style={{ fontSize: '1.25em', fontWeight: 'normal'}}
               />
-
-              <Button color='linkedin' size='huge'>
-                <Icon name='linkedin' /> LinkedIn
-              </Button>
-
-              <Button color='github' size='huge'>
-                <Icon name='github' /> Github
-              </Button>
-
-
             </Container>
 
+            <Button color='linkedin' size='huge' href='https://www.linkedin.com/in/adrian-orenstein-7088b4151/'>
+              <Icon name='linkedin' /> LinkedIn
+            </Button>
+
+            <Button color='github' size='huge' href='https://github.com/AdrianOrenstein'>
+              <Icon name='github' /> Github
+            </Button>
+
           </Segment>
-        </Visibility>
+          </Visibility>
+        </Container>
+        </div>
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
-          <Grid container stackable verticalAlign='middle'>
-            <Grid.Row>
-              <Grid.Column width={8}>
-                <Header as='h3' style={{ fontSize: '2em' }}>Something something header text</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Blah blahh lbahlhlh, Blah blahh lbahlhlh, Blah blahh lbahlhlhBlah blahh lbahlhlh, Blah blahh lbahlhlhBlah blahh lbahlhlh,Blah blahh lbahlhlh
-                </p>
-                <Header as='h3' style={{ fontSize: '2em' }}>We Make Bananas That Can Dance</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
-                </p>
-              </Grid.Column>
-              <Grid.Column floated='right' width={6}>
-                <Image
-                  bordered
-                  rounded
-                  size='large'
-                  src='/assets/images/wireframe/white-image.png'
-                />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column textAlign='center'>
-                <Button size='huge'>Check Them Out</Button>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+        {/* Spacer */}
+        <div style={{ padding: '4em 0em' }}/>
 
-        <Segment style={{ padding: '0em' }} vertical>
-          <Grid celled='internally' columns='equal' stackable>
-            <Grid.Row textAlign='center'>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>"What a Company"</Header>
-                <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
-              </Grid.Column>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>"I shouldn't have gone with their competitor."</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  <Image avatar src='/assets/images/avatar/large/nan.jpg' />
-                  <b>Nan</b> Chief Fun Officer Acme Toys
-                </p>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+        {/* Imported Components */}
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
-          <Container text>
-            <Header as='h3' style={{ fontSize: '2em' }}>Breaking The Grid, Grabs Your Attention</Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Instead of focusing on content creation and hard work, we have learned how to master the art of doing
-              nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic
-              and worth your attention.
-            </p>
-            <Button as='a' size='large'>Read More</Button>
+        <TileShooter/>
+        <div style={{ padding: '2em 0em' }}/>
 
-            <Divider
-              as='h4'
-              className='header'
-              horizontal
-              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-            >
-              <a href='#'>Case Studies</a>
-            </Divider>
+        <Tundra/>
+        <div style={{ padding: '2em 0em' }}/>
 
-            <Header as='h3' style={{ fontSize: '2em' }}>Did We Tell You About Our Bananas?</Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but it's really
-              true.
-              It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
-            </p>
-            <Button as='a' size='large'>I'm Still Quite Interested</Button>
-          </Container>
-        </Segment>
+        <OdysseyMk3/>
+        <div style={{ padding: '2em 0em' }}/>
 
-        <Segment inverted vertical style={{ padding: '5em 0em' }}>
+        <RocketLaunch/>
+        <div style={{ padding: '2em 0em' }}/>
+
+        <HoudiniSmoke/>
+        <div style={{ padding: '2em 0em' }}/>
+
+        {/* Footer */}
+
+        <Segment inverted vertical style={{ padding: '2.2em 0em' }}>
           <Container>
             <Grid divided inverted stackable>
               <Grid.Row>
                 
-                <Grid.Column width={3}>
-                  <Header as='h4' inverted>Created with:</Header>
-                  <a href='https://react.semantic-ui.com' inverted >Semantic-UI-React</a>
-                </Grid.Column>
-
                 <Grid.Column width={7}>
-                  <Header as='h4' inverted>Contact Me</Header>
-                  <p>Email: adrian.orenstein@gmail.com</p>
+                  <Header as='h4' inverted>
+                    Copyright 2017 © Adrian Orenstein. All rights reserved.
+                  </Header>
                 </Grid.Column>
 
               </Grid.Row>

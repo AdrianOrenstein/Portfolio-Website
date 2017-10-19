@@ -1,35 +1,12 @@
-.App 
+.app-background
 {
-  text-align: center;
+  background: transparent;
+  background-image: url('./img/GreyBackground2.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.header
+.transparent-block
 {
-  background-color: #ffffff !important;
+  background: transparent !important;
 }
-
-.App-logo 
-{
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header 
-{
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro 
-{
-  font-size: large;
-}
-
-@keyframes App-logo-spin 
-{
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
