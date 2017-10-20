@@ -11,7 +11,7 @@ import image from './img.jpg'
 
 const TileShooter = () => (
   <div>
-      <Segment vertical>
+      <Segment vertical style={{ padding: '2em 2em' }}>
         <Container text>
           
           <Header as='h1' dividing>AIE Game - Tile Shooter</Header>

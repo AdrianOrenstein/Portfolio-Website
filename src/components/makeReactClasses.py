@@ -4,7 +4,7 @@ import fileinput
 import os
 import sys
 
-# Generated valid .cpp and .h files from stdin
+# This is my dirty way of making components really quickly, it's bad I know :P
 
 # Run Command: python3 makeClasses.py
 # Input: className1 [ENTER] className2 [ENTER] etc..

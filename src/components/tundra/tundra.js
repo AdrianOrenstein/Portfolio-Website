@@ -12,7 +12,7 @@ import image from './img.jpg'
 const Tundra = () => (
 
 	<div>
-		<Segment vertical>
+		<Segment vertical style={{ padding: '2em 2em' }}>
 			<Container text>
 
 				<Header as='h1' dividing>Tundra</Header>

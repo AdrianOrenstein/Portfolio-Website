@@ -1,13 +1,12 @@
 # Portfolio Website
 
-This is repo holds the source code for my [portfolio website V2](http://adrianbills.com/secret/). 
+This is repo holds the source code for my [portfolio website](http://adrianorenstein.com). 
 
-It's unlikely I can get back to this project until 2018 due to Uni.
-
+It's hosted on an [s3 bucket instance](http://www.adrianorenstein.com.s3-website-ap-southeast-2.amazonaws.com)
+The CDN is [Cloudflare](https://www.cloudflare.com/)
 
 ## Getting Started
 
-apt-get install mariadb-server
 apt-get install node
 
 Run commands:
@@ -15,7 +14,7 @@ Run commands:
 npm install
 npm start
 ```
-Then connect to localhost:9000
+Then connect to localhost:3000
 
 ## Built With
 

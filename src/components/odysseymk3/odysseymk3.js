@@ -12,7 +12,7 @@ import image from './img.jpg'
 const OdysseyMk3 = () => (
 
 	<div>
-		<Segment vertical>
+		<Segment vertical style={{ padding: '2em 2em' }}>
 			<Container text>
 
 				<Header as='h1' dividing>Odyssey Mk3</Header>
