@@ -17,7 +17,7 @@ const RocketLaunch = () => (
 
 				<Header as='h1' dividing>Rocket Launch</Header>
 				<p>
-					Three test renders of the rocket launch in 'Odyssey' (Yr 12 2014)
+					Three test renders of the rocket launch in Odyssey (Yr 12 2014)
 				</p>
 				<a href='https://www.youtube.com/watch?v=RjqUq15gxww'>Video Link</a>
 				<Image src={image} style={{ padding: '1em 0em' }}/>

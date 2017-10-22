@@ -18,7 +18,7 @@ const Tundra = () => (
 				<Header as='h1' dividing>Tundra</Header>
 
 				<p>
-					Tundra is a winter survival game, made using the Unreal 4 Engine for my Certificate II in Media.
+					Tundra is a winter survival game, made using the Unreal 4 Engine for my Certificate III in Media.
 				</p>
 
 				<a href='https://www.youtube.com/watch?v=fUHWuqskuMM'>Video Link</a>
