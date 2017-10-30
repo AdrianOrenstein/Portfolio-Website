@@ -4,10 +4,10 @@ import {
   Container,
   Grid,
   Header,
-  Icon,
   Menu,
   Segment,
   Visibility,
+  Icon,
 } from 'semantic-ui-react'
 
 // CSS
@@ -97,9 +97,10 @@ export default class HomepageLayout extends Component {
         	  			<Segment
         	  			  	inverted
         	  			  	textAlign='center'
-        	  			  	style={{ minHeight: 700, padding: '1em 0em' }}
+        	  			  	style={{ padding: '1em 0em' }}
         	  			  	vertical
         	  			  	className='transparent-block'
+                      cover
         	  			>
         	    			{/* Task Bar */}
         	    			<Menu inverted pointing secondary size='medium'>
@@ -134,7 +135,7 @@ export default class HomepageLayout extends Component {
         	    				  	as='h1'
         	    				  	content='Welcome to my portfolio!'
         	    				  	inverted
-        	    				  	style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
+                          className="portfolioHeader"
         	    				/>
 					
         	    				<Container text style={{ padding: '1em 0em' }}>

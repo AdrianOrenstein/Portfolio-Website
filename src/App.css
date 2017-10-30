@@ -2,11 +2,19 @@
 {
   background: transparent;
   background-image: url('./img/GreyBackground2.svg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .transparent-block
 {
   background: transparent !important;
+}
+
+.portfolioHeader
+{
+	font-size: 4em; 
+	font-weight: normal; 
+	margin-bottom: 0; 
+	margin-top: 10em;
 }
